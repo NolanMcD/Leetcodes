@@ -1,0 +1,10 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        answer = dict()
+        position = 0
+        while (position < len(nums)):
+            if((target - nums[position]) not in answer):
+                answer[nums[position]] = position
+                position += 1
+            else:
+                return [answer[target-nums[position]],position]
