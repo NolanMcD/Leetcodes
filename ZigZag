@@ -1,0 +1,15 @@
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        lineNum = 0
+        place = 1
+        output = [""] * numRows
+        for i in range(len(s)):
+            output[lineNum] += s[i]
+            if numRows > 1:
+                lineNum += place
+                if (lineNum == 0) or (lineNum == numRows - 1):
+                    place *= -1
+        outputS = ""
+        for k in range(numRows):
+            outputS += output[k]
+        return outputS
