@@ -1,0 +1,19 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        neg = 0
+        if x < 0:
+            neg = 1
+            x = abs(x)
+        s = str(x)
+        num = []
+        for i in s:
+            num.append(i)
+        num.reverse()
+        if neg:
+            num.insert(0, "-")
+        numnew = ""
+        for k in num:
+            numnew = numnew + k
+        if (int(numnew) >= 2**31-1) or (int(numnew) <= -2**31): 
+            return 0
+        return int(numnew)
