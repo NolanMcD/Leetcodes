@@ -1,0 +1,12 @@
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        width = 0
+        oArea = 0
+        for x in range(len(height)):
+            for y in range(len(height)):
+                h = min(height[x],height[y])
+                width = (y - x)
+                nArea = h * width
+                if nArea > oArea:
+                    oArea = nArea
+        return oArea
